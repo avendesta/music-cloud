@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 // route imports
 const userRouter = require('./routes/userRouter')
 const commentRouter = require('./routes/commentRouter')
-
+const favoriteRouter = require('./routes/favoriteRouter')
 
 // initializations
 const app = express()
@@ -24,6 +24,7 @@ app.use(morgan('dev'));
 app.use("public", express.static(path.join(__dirname, 'assets')));
 
 // routes
+app.use("/favorite", favoriteRouter)
 app.use("/users", userRouter)
 
 // client route

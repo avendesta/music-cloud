@@ -1,0 +1,8 @@
+### test 01 -> get all favorites
+GET http://localhost:3000/favorite/favorites
+
+### test 02 -> add a favorite
+POST http://localhost:3000/favorite/addToFavorite
+Content-Type: application/json
+
+{"userId": 2, "musicId": 4, "musicTitle": "Peruvian Music Title"}
