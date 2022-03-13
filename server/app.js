@@ -15,7 +15,6 @@ const commentRouter = require('./routes/commentRouter')
 
 // initializations
 const app = express()
-mongoose.connect(`${process.env.DATABASE_URL}`);
 
 // middlewares
 app.use(cors())
@@ -28,15 +27,19 @@ app.use("public", express.static(path.join(__dirname, 'assets')));
 app.use("/users", userRouter)
 
 // client route
-app.get("/", (req,res)=>{
-    res.send({result: "ok"})
+app.get("/", (req, res) => {
+    res.send({ result: "ok" })
 })
 
 
 // error handling
-app.use((err,req,res,next)=>{
-    return res.json({error: err.message})
+app.use((err, req, res, next) => {
+    return res.json({ error: err.message })
 })
 
 // bootup
-app.listen(port, _=>console.log(`running on port ${port}`))
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+    app.listen(port, _ => console.log(`running on port ${port}`))
+}).catch((err) => {
+    console.log(err)
+})
