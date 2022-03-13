@@ -1,0 +1,21 @@
+[{
+    "username": "Okbit",
+    "email": "okabit@gmail.com",
+    "firstname": "Okbakrstos",
+    "lastname": "Berhe",
+    "password": "plainpassword1"
+  },
+  {
+    "username": "Aven",
+    "email": "aven@gmail.com",
+    "firstname": "Aven",
+    "lastname": "Desta",
+    "password": "plainpassword2"
+  },
+  {
+    "username": "Elias",
+    "email": "elias@gmail.com",
+    "firstname": "Elias",
+    "lastname": "Mamani",
+    "password": "plainpassword3"
+  }]
