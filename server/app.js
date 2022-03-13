@@ -14,6 +14,7 @@ const commentRouter = require('./routes/commentRouter')
 
 // initializations
 const app = express()
+mongoose.connect(`${process.env.DATABASE_URL}`);
 
 // middlewares
 app.use(cors())
