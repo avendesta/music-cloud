@@ -1,0 +1,15 @@
+### test 01 -> get all music
+GET http://localhost:3000/music
+
+### test 02 -> add a music
+POST http://localhost:3000/music
+Content-Type: application/json
+
+{"artist": "Micheal Jackson", "title": "Thriller", "description": "1998 release"}
+
+### test 03 -> remove a music
+DELETE http://localhost:3000/music/622e4e2b79e6b372365b9eb8
+
+### test 04 -> get music from user
+GET http://localhost:3000/music/user/3
+

@@ -11,6 +11,8 @@ const port = process.env.PORT || 3000;
 // route imports
 const userRouter = require('./routes/userRouter')
 const favoriteRouter = require('./routes/favoriteRouter')
+const commentRouter = require('./routes/commentRouter')
+const musicRouter = require('./routes/musicRouter')
 
 
 
@@ -30,6 +32,7 @@ app.use("public", express.static(path.join(__dirname, 'assets')));
 app.use("/favorite", favoriteRouter)
 app.use("/users", userRouter)
 app.use("/comments", commentRouter)
+app.use("/music", musicRouter)
 
 
 // client route
