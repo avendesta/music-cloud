@@ -5,4 +5,13 @@ GET http://localhost:3000/favorite/favorites
 POST http://localhost:3000/favorite/addToFavorite
 Content-Type: application/json
 
-{"userId": 2, "musicId": 4, "musicTitle": "Peruvian Music Title"}
+{"userId": 3, "musicId": 2, "musicTitle": "Peruvian Music Title"}
+
+### test 03 -> remove favorite
+DELETE http://localhost:3000/favorite/favorites/622e4e2b79e6b372365b9eb8
+
+### test 04 -> get favorite from user
+GET http://localhost:3000/favorite/3/favorites/
+
+### test 05 -> get favorite from music
+GET http://localhost:3000/favorite/music/2/favorites/

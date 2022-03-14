@@ -7,10 +7,18 @@ exports.getAll = async function(){
     return result;
 }
 
-// retrieve a favorite by id
-exports.getById = function(id){
-    // return db.favorite.filter(s => s.id==id)
-    return "implement";
+// retrieve a favorite by Userid
+exports.getByUserId = async function(userId){
+    const result = await Favorite.find({userId: userId},{updatedAt: 0, __v: 0})
+    console.log("getByUserId: ",result)
+    return result;
+}
+
+// retrieve a favorite by Musicid
+exports.getByMusicId = async function(musicId){
+    const result = await Favorite.find({musicId: musicId},{updatedAt: 0, __v: 0})
+    console.log("getByMusicId: ",result)
+    return result;
 }
 
 // add a favorite
@@ -22,16 +30,9 @@ exports.addOne = async function(body){
 }
 
 // delete a favorite by id
-exports.removeOne = function(id){
+exports.removeOne = async function(id){
     // db.favorite = db.favorite.filter(s => s.id != id)
-    return "implement";
-    return true
-}
-
-// replace a favorite
-exports.replaceOne = function(favorite){
-    // db.favorite = db.favorite.filter(s => s.id != favorite.id)
-    // db.favorite.push(favorite)
-    return "implement";
+    console.log("delete Favorite:", id)
+    await Favorite.deleteOne({_id: id})
     return true
 }

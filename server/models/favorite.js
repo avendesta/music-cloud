@@ -9,6 +9,9 @@ const favoriteSchema = mongoose.Schema({
     musicId: {
         type: String
     },
+    userId: {
+        type: String
+    },
     musicTitle: {
         type: String
     }
