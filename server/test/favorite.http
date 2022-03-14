@@ -11,7 +11,7 @@ Content-Type: application/json
 DELETE http://localhost:3000/favorite/622e4e2b79e6b372365b9eb8
 
 ### test 04 -> get favorite from user
-GET http://localhost:3000/favorite/user/3
+GET http://localhost:3000/favorite/user/622f6967476b268f715f1c5d
 
 ### test 05 -> get favorite from music
 GET http://localhost:3000/favorite/music/2
