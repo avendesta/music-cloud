@@ -7,17 +7,39 @@ Content-Type: application/json
 
 {
 	"username":"kyaw",
-	"email":"kkyaw@gmail.com",
+	"email":"kyaw@gmail.com",
 	"password":"plainpassword4",
 	"firstname":"Kyaw",
 	"lastname":"Thiha"
 }
 
-### test 03 -> login with a valid user
+### test 03 -> register a user twice
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+	"username":"kyaw",
+	"email":"kyaw@gmail.com",
+	"password":"plainpassword4",
+	"firstname":"Kyaw",
+	"lastname":"Thiha"
+}
+
+
+### test 04 -> login with a valid user
 POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
     "email": "elias@gmail.com",
+    "password": "plainpassword3"
+}
+
+### test 05 -> login with a non-existing user
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "unknown@gmail.com",
     "password": "plainpassword3"
 }

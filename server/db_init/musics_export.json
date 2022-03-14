@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "622f6a75b59e5486dee9d39a"
+  },
+  "uploader": {
+    "$oid": "622f6967476b268f715f1c5e"
+  },
+  "artist": "Micheal Jackson",
+  "title": "Thriller",
+  "description": "1998 release",
+  "createdAt": {
+    "$date": "2022-03-14T16:16:53.013Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-14T16:16:53.013Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622f6ac8b59e5486dee9d39d"
+  },
+  "uploader": {
+    "$oid": "622f6967476b268f715f1c5d"
+  },
+  "artist": "Mariah Carey",
+  "title": "All I want for Christmas",
+  "description": "1994 release",
+  "createdAt": {
+    "$date": "2022-03-14T16:18:16.658Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-14T16:18:16.658Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622f6ae1b59e5486dee9d39f"
+  },
+  "uploader": {
+    "$oid": "622f6967476b268f715f1c5d"
+  },
+  "artist": "Michael Bolton",
+  "title": "Steal Bars",
+  "description": "1990 release",
+  "createdAt": {
+    "$date": "2022-03-14T16:18:41.732Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-14T16:18:41.732Z"
+  },
+  "__v": 0
+}]
