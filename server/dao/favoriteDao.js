@@ -9,7 +9,7 @@ exports.getAll = async function(){
 
 // retrieve a favorite by Userid
 exports.getByUserId = async function(userId){
-    const result = await Favorite.find({userId: userId},{updatedAt: 0, __v: 0})
+    const result = await Favorite.find({},{updatedAt: 0, __v: 0}).populate('music')
     console.log("getByUserId: ",result)
     return result;
 }
