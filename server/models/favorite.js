@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema.Types;
 
 const favoriteSchema = mongoose.Schema({
-    userId: {
+    user: {
         type: ObjectId,
         ref: 'User'
     },
-    musicId: {
+    music: {
         type: ObjectId,
         ref: 'Music'
     }

@@ -6,8 +6,10 @@ const commentSchema = mongoose.Schema({
         type: Shema.Types.ObjectId,
         ref: 'User'
     }, 
-    musicId: {
-        type: String,
+    music: {
+        type: Shema.Types.ObjectId,
+        ref: 'Music'
+        
     },
     
     content: {
