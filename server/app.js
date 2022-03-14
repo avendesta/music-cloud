@@ -10,7 +10,6 @@ const port = process.env.PORT || 3000;
 
 // route imports
 const userRouter = require('./routes/userRouter')
-const commentRouter = require('./routes/commentRouter')
 const favoriteRouter = require('./routes/favoriteRouter')
 
 

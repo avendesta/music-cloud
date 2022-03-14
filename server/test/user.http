@@ -1,32 +1,23 @@
 ### test 01 -> base url
 GET http://localhost:3000/
 
-### test 02 -> get all users
-GET http://localhost:3000/users
-
-### test 03 -> get a user with id=1
-GET http://localhost:3000/users/1
-
-### test 04 -> get a user that doesn't exist
-GET http://localhost:3000/users/99
-
-### test 05 -> add a user with id=3
-POST http://localhost:3000/users
+### test 02 -> register a valid user
+POST http://localhost:3000/users/register
 Content-Type: application/json
 
-{"id": 3, "name": "Kyaw Thiha", "course": "CS543", "grade": 91}
+{
+	"username":"kyaw",
+	"email":"kkyaw@gmail.com",
+	"password":"plainpassword4",
+	"firstname":"Kyaw",
+	"lastname":"Thiha"
+}
 
-### test 06 -> delete a user with id=1
-DELETE http://localhost:3000/users/1
-
-### test 07 -> replace user with id=3
-PUT http://localhost:3000/users
+### test 03 -> login with a valid user
+POST http://localhost:3000/users/login
 Content-Type: application/json
 
-{"id": 3, "name": "Bulelani Mlindelwa", "course": "CS574", "grade": 100}
-
-### test 08 -> request with invalid user
-POST http://localhost:3000/users
-Content-Type: application/json
-
-{"id": 5, "course": "CS452", "grade": 81}
+{
+    "email": "elias@gmail.com",
+    "password": "plainpassword3"
+}
