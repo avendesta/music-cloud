@@ -5,10 +5,10 @@ GET http://localhost:3000/music
 POST http://localhost:3000/music
 Content-Type: application/json
 
-{"uploader":"622f6967476b268f715f1c5d", "artist": "Michael Bolton", "title": "Steal Bars", "description": "1990 release"}
+{"uploader":"622f6967476b268f715f1c5d", "artist": "Taylor Swift", "title": "Red", "description": "2001 release"}
 
 ### test 03 -> remove a music
-DELETE http://localhost:3000/music/622e4e2b79e6b372365b9eb8
+DELETE http://localhost:3000/music/622f9b73f578d2614a275eea
 
 ### test 04 -> get music from user
 GET http://localhost:3000/music/user/3
