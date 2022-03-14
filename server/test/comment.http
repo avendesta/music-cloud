@@ -1,0 +1,16 @@
+### test 01 -> base url
+GET http://localhost:3000/
+
+### test 02 -> get all comments
+GET http://localhost:3000/comments
+
+### test 03 -> get a comment with id=111
+GET http://localhost:3000/comments/111
+
+
+### test 05 -> add a comment with id=111
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{  "musicId": "111", "content": "good music"}
+

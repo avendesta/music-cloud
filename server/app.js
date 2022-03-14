@@ -13,6 +13,9 @@ const userRouter = require('./routes/userRouter')
 const commentRouter = require('./routes/commentRouter')
 
 
+
+
+
 // initializations
 const app = express()
 
@@ -25,6 +28,8 @@ app.use("public", express.static(path.join(__dirname, 'assets')));
 
 // routes
 app.use("/users", userRouter)
+app.use("/comments", commentRouter)
+
 
 // client route
 app.get("/", (req, res) => {
