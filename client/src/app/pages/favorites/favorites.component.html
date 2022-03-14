@@ -3,27 +3,27 @@
 <section>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <!-- Nro Column -->
-        <ng-container matColumnDef="position">
+        <ng-container matColumnDef="nro">
             <th mat-header-cell *matHeaderCellDef> No. </th>
-            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.nro}} </td>
         </ng-container>
 
         <!-- Music Title Column -->
-        <ng-container matColumnDef="name">
+        <ng-container matColumnDef="music">
             <th mat-header-cell *matHeaderCellDef> Music Title </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.music}} </td>
         </ng-container>
 
         <!-- Date Column -->
-        <ng-container matColumnDef="weight">
+        <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef> Date </th>
-            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
         </ng-container>
 
         <!-- Options Column -->
-        <ng-container matColumnDef="symbol">
+        <ng-container matColumnDef="options">
             <th mat-header-cell *matHeaderCellDef> Options </th>
-            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.options}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
