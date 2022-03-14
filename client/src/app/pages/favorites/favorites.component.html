@@ -1,0 +1,32 @@
+<h2>My favorite music</h2>
+
+<section>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Nro Column -->
+        <ng-container matColumnDef="nro">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.nro}} </td>
+        </ng-container>
+
+        <!-- Music Title Column -->
+        <ng-container matColumnDef="music">
+            <th mat-header-cell *matHeaderCellDef> Music Title </th>
+            <td mat-cell *matCellDef="let element"> {{element.music}} </td>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+
+        <!-- Options Column -->
+        <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef> Options </th>
+            <td mat-cell *matCellDef="let element"> {{element.options}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</section>
