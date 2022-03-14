@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "622f85d2a2b47f9d8e059af7"
+  },
+  "userId": {
+    "$oid": "622f6967476b268f715f1c5e"
+  },
+  "musicId": {
+    "$oid": "622f6a75b59e5486dee9d39a"
+  },
+  "createdAt": {
+    "$date": "2022-03-14T18:13:38.387Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-14T18:13:38.387Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622f8623a2b47f9d8e059afa"
+  },
+  "userId": {
+    "$oid": "622f6967476b268f715f1c5e"
+  },
+  "musicId": {
+    "$oid": "622f6ac8b59e5486dee9d39d"
+  },
+  "createdAt": {
+    "$date": "2022-03-14T18:14:59.544Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-14T18:14:59.544Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622f8635a2b47f9d8e059afc"
+  },
+  "userId": {
+    "$oid": "622f6967476b268f715f1c5d"
+  },
+  "musicId": {
+    "$oid": "622f6ae1b59e5486dee9d39f"
+  },
+  "createdAt": {
+    "$date": "2022-03-14T18:15:17.742Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-14T18:15:17.742Z"
+  },
+  "__v": 0
+}]
