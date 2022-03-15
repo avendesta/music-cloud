@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { CommentService } from 'src/app/services/comment/comment.service';
+import { UtilsService } from 'src/app/services/util/utils.service';
 
 export interface commentObj {
   user: String;
@@ -17,14 +18,16 @@ export interface commentObj {
 })
 export class CommentsComponent implements OnInit, OnDestroy {
 
+  token!: string
   myForm!: FormGroup
   myComments: commentObj[] = []
   subscriptionAllComments!: Subscription
 
-  constructor(private serviceComment: CommentService, private fb: FormBuilder) {
+  constructor(private serviceComment: CommentService, private fb: FormBuilder, private serviceUtil: UtilsService) {
     this.myForm = fb.group({
       'comment': ['', Validators.required]
     })
+    this.token = this.serviceUtil.getSession() || ''
   }
   ngOnDestroy(): void {
     this.subscriptionAllComments.unsubscribe()
