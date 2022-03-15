@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { FavoriteService } from 'src/app/services/favorites/favorite.service';
 
 export interface FavoriteElement {
-  nro: number;
   music: String;
   date: String;
   favoriteId: string;
@@ -25,16 +24,17 @@ export class FavoritesComponent implements OnInit {
   constructor(private service: FavoriteService, private router:Router) { }
 
   ngOnInit(): void {
+    this.dataSource = []
+    ELEMENT_DATA = []
+    
     this.service.getAll('622f6967476b268f715f1c5e').subscribe((res:any)=> {
-      
+      let index = 0
       res.forEach((element:any) => {
         ELEMENT_DATA.push({
-          nro: 1,
           date: element['createdAt'],
           music: element['music']['title'],
           favoriteId: element['_id']
         })
-        console.log("elem: ",element)
       });
 
       this.dataSource = ELEMENT_DATA
@@ -44,8 +44,10 @@ export class FavoritesComponent implements OnInit {
   deleteFavorite(favoriteId: String, music: String) {
     if(confirm("Are you sure to delete "+music+"?")) {
       console.log("delete Favorite:", favoriteId)
+
       this.service.postDelete(favoriteId).subscribe((res:any)=>{
-        this.router.navigate(['/favorites'])
+        ELEMENT_DATA = ELEMENT_DATA.filter((fav)=> fav.favoriteId != favoriteId)
+        this.dataSource = ELEMENT_DATA
       })
     }
   }

@@ -1,11 +1,12 @@
 <h2>My favorite music</h2>
 
 <section>
-    <table mat-table [dataSource]="dataSource" class="w-100" class="mat-elevation-z8">
+    <table mat-table [width]="750" [dataSource]="dataSource" class="mat-elevation-z8">
         <!-- Nro Column -->
         <ng-container matColumnDef="nro">
             <th mat-header-cell *matHeaderCellDef> No. </th>
-            <td mat-cell *matCellDef="let element"> {{element.nro}} </td>
+            <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+
         </ng-container>
 
         <!-- Music Title Column -->
