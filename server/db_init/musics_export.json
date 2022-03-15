@@ -1,13 +1,53 @@
 [{
   "_id": {
+    "$oid": "622f6a75b59e5486dee9d394"
+  },
+  "uploader": {
+    "$oid": "622f6967476b268f715f1c53"
+  },
+  "artist": "Hand tuntable dji",
+  "title": "Love",
+  "description": "2022 release",
+  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "thumbnail": "https://cdn.pixabay.com/photo/2016/11/22/19/15/hand-1850120__340.jpg",
+  "createdAt": {
+    "$date": "2022-03-14T16:16:53.013Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-14T16:16:53.013Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "622f6a75b59e5486dee9d39b"
+  },
+  "uploader": {
+    "$oid": "622f6967476b268f715f1c5e"
+  },
+  "artist": "Hand Gitar dji",
+  "title": "Rock",
+  "description": "2006 release",
+  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "thumbnail": "https://cdn.pixabay.com/photo/2014/05/21/15/18/musician-349790__340.jpg",
+  "createdAt": {
+    "$date": "2022-03-14T16:16:53.013Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-14T16:16:53.013Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
     "$oid": "622f6a75b59e5486dee9d39a"
   },
   "uploader": {
     "$oid": "622f6967476b268f715f1c5e"
   },
   "artist": "Micheal Jackson",
-  "title": "Thriller",
-  "description": "1998 release",
+  "title": "Romance",
+  "description": "2001 release",
   "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   "thumbnail": "https://bit.ly/37xA8In",
   "createdAt": {
@@ -17,7 +57,8 @@
     "$date": "2022-03-14T16:16:53.013Z"
   },
   "__v": 0
-},{
+},
+{
   "_id": {
     "$oid": "622f6ac8b59e5486dee9d39d"
   },
@@ -36,7 +77,28 @@
     "$date": "2022-03-14T16:18:16.658Z"
   },
   "__v": 0
-},{
+},
+{
+  "_id": {
+    "$oid": "622f6a75b59e5486dee9d397"
+  },
+  "uploader": {
+    "$oid": "622f6967476b268f715f1c56"
+  },
+  "artist": "lady dji",
+  "title": "slow",
+  "description": "1978 release",
+  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "thumbnail": "https://cdn.pixabay.com/photo/2016/01/14/06/09/woman-1139397__480.jpg",
+  "createdAt": {
+    "$date": "2022-03-14T16:16:53.013Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-14T16:16:53.013Z"
+  },
+  "__v": 0
+},
+{
   "_id": {
     "$oid": "622f6ae1b59e5486dee9d39f"
   },
@@ -45,7 +107,7 @@
   },
   "artist": "Michael Bolton",
   "title": "Steal Bars",
-  "description": "1990 release",
+  "description": "2021 release",
   "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   "thumbnail": "https://bit.ly/37xA8In",
   "createdAt": {
@@ -55,4 +117,26 @@
     "$date": "2022-03-14T16:18:41.732Z"
   },
   "__v": 0
+}
+,
+{
+  "_id": {
+    "$oid": "622f6ae1b59e5486dee9d390"
+  },
+  "uploader": {
+    "$oid": "622f6967476b268f715f1c58"
+  },
+  "artist": "Baby girl",
+  "title": "Vaioline",
+  "description": "2005 release",
+  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "thumbnail": "https://cdn.pixabay.com/photo/2016/08/24/20/39/violin-1617972__480.jpg",
+  "createdAt": {
+    "$date": "2022-03-14T16:18:41.732Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-14T16:18:41.732Z"
+  },
+  "__v": 0
 }]
+
