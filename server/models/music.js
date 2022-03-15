@@ -18,6 +18,7 @@ const musicSchema = mongoose.Schema({
     },
     filePath : {
         type: String,
+        default: "https://bit.ly/3IbJYMw"
     },
     catogory: String,
     thumbnail: {
