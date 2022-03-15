@@ -2,7 +2,7 @@
 GET http://localhost:3000/comments/622fb7b98cc64d80a7035c04
 
 ### test 04 -> get comments under a music
-GET http://localhost:3000/comments/music/622f6a75b59e5486dee9d39a
+GET http://localhost:3000/comments/music/622f6ae1b59e5486dee9d39f
 
 ### test 05 -> add a comment
 POST http://localhost:3000/comments
