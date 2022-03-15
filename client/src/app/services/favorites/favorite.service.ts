@@ -12,4 +12,9 @@ export class FavoriteService {
   getAll(userId: String) {
     return this.client.get('http://localhost:3000/favorite/user/' + userId)
   }
+
+  //delete favorite
+  postDelete(favoriteId: String){
+    return this.client.delete('http://localhost:3000/favorite/' + favoriteId)
+  }
 }

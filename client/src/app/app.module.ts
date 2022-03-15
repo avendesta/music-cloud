@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { RouterModule, Routes } from '@angular/router';
 import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
 
 const MY_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,7 +27,10 @@ const MY_ROUTES: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(MY_ROUTES),
     MatTableModule,
-    HttpClientModule
+    MatIconModule,
+    HttpClientModule,
+    MatToolbarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
