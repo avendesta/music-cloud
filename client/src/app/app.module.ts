@@ -11,11 +11,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const MY_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'favorites', component: FavoritesComponent },
   { path: 'home', component: HomeComponent},
+  { path: 'login', component: LoginComponent},
   { path: '**', redirectTo: 'home' }
 ]
 
@@ -24,6 +27,7 @@ const MY_ROUTES: Routes = [
     AppComponent,
     FavoritesComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ const MY_ROUTES: Routes = [
     MatIconModule,
     HttpClientModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
