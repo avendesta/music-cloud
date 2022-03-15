@@ -2,18 +2,19 @@ const mongoose = require('mongoose');
 const Shema = mongoose.Schema;
 
 const commentSchema = mongoose.Schema({
-    writer: {
+    author: {
         type: Shema.Types.ObjectId,
         ref: 'User'
     }, 
-    music: {
+    underMusic: {
         type: Shema.Types.ObjectId,
         ref: 'Music'
         
     },
     
     content: {
-        type: String
+        type: String,
+        required: true
     }
 
 }, { timestamps: true })
