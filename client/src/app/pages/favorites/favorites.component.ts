@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FavoriteService } from 'src/app/services/favorites/favorite.service';
+import { UtilsService } from 'src/app/services/util/utils.service';
 
 export interface FavoriteElement {
   music: String;
@@ -21,13 +22,16 @@ export class FavoritesComponent implements OnInit {
   displayedColumns: string[] = ['nro', 'music', 'date', 'favoriteId'];
   dataSource: FavoriteElement[] = [];
 
-  constructor(private service: FavoriteService, private router:Router) { }
+  constructor(private utilService: UtilsService , private service: FavoriteService, private router:Router) { }
 
   ngOnInit(): void {
     this.dataSource = []
     ELEMENT_DATA = []
-    
-    this.service.getAll('622f6967476b268f715f1c5e').subscribe((res:any)=> {
+    const token = this.utilService.getSession() || ""
+    const decodedToken:any = JSON.parse(atob(token.split('.')[1]))
+    const userId = decodedToken["_id"]
+    const userName = decodedToken["username"]
+    this.service.getAll(userId).subscribe((res:any)=> {
       res['data'].forEach((element:any) => {
         ELEMENT_DATA.push({
           date: element['createdAt'],
