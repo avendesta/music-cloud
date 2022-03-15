@@ -1,5 +1,5 @@
 <mat-card>
-    <form [formGroup]="myForm" (ngSubmit)="sendComment()">
+    <form *ngIf="token != ''" [formGroup]="myForm" (ngSubmit)="sendComment()">
         <mat-card-title>What do you think?</mat-card-title>
         <mat-card-subtitle>
             <textarea formControlName="comment" class="full" matInput></textarea>
