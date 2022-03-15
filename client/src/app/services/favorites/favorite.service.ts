@@ -14,7 +14,15 @@ export class FavoriteService {
   }
 
   //delete favorite
-  postDelete(favoriteId: String){
+  postDelete(favoriteId: String) {
     return this.client.delete('http://localhost:3000/favorite/' + favoriteId)
+  }
+
+  //add favorite
+  addFavorite(userId: string, musicId: string) {
+    let body = {
+      user: userId, musicId: musicId
+    }
+    return this.client.post('http://localhost:3000/favorite', body)
   }
 }

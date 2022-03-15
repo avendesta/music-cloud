@@ -1,0 +1,33 @@
+.content {
+    min-width: 900px;
+    max-width: 960px;
+}
+.description-music {
+    padding-left: 1em;
+}
+.music-detail img{
+    width: 100%;
+}
+.music-detail button {
+    background: none;
+    border: none;
+    color: gray;
+    font-size: .7em;
+}
+.button-likes{
+    font-size: 20px;
+}
+.button-likes button:first-child{
+    margin-right: 20px;
+}
+.music-detail .description-music{
+    color: #6e6e6e;
+    font-weight: bold;
+}
+.music-detail .description-music p  {
+    font-size: 2em;
+}
+.music-detail .description-music span  {
+    font-size: 1em;
+    font-weight: 200;
+}

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import {
   FormGroup,
   Validators,
@@ -7,16 +7,18 @@ import {
 import { Router } from '@angular/router';
 import { Observable, of, Subscription } from "rxjs";
 import { LoginService } from 'src/app/services/login/login.service';
+import { UtilsService } from 'src/app/services/util/utils.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class LoginComponent implements OnDestroy{
   res$!: Subscription
   myForm: FormGroup;
-  constructor(private router: Router, private service: LoginService, private formBuilder: FormBuilder) {
+  constructor(private router: Router, private service: LoginService, private formBuilder: FormBuilder, private utilService: UtilsService) {
     this.myForm = formBuilder.group({
       'email': ['', Validators.compose([Validators.required, Validators.email])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(8)])],
@@ -24,32 +26,19 @@ export class LoginComponent implements OnDestroy{
 
   }
   ngOnDestroy(): void {
-    this.res$.unsubscribe()
+    if(this.res$ != null)
+      this.res$.unsubscribe()
   }
 
   onSubmit() {
     console.log(this.myForm.value);
     this.res$ = this.service.login(this.myForm.value['email'],this.myForm.value['password']).subscribe((res:any)=>{
       if(res['status']){
+        console.log("1")
+        this.utilService.setSession(res.token)
+        console.log("2")
         this.router.navigate(['/home']);
       }
     })
   }
-
-  // notBadValidator(control: FormControl): { [s: string]: boolean } | null {
-  //   if (control.value === 'bad') {
-  //     return { example: true };
-  //   }
-  //   return null;
-  // }
-  
-  //   loginValidator(control: FormControl): Promise<any> | Observable<any> {
-  //   return new Promise(resolve => {
-  //     setTimeout(() => {
-  //       // this.myForm.get().disable()   fail;
-  //       if (control.value === 'bad@bad.com') resolve({ example: true }) // invalid
-  //       resolve(null) // valid
-  //     }, 5000);
-  //   })
-  // }
 }
