@@ -28,7 +28,7 @@ export class FavoritesComponent implements OnInit {
     ELEMENT_DATA = []
     
     this.service.getAll('622f6967476b268f715f1c5e').subscribe((res:any)=> {
-      let index = 0
+      console.log("get all favorites:::",res)
       res.forEach((element:any) => {
         ELEMENT_DATA.push({
           date: element['createdAt'],

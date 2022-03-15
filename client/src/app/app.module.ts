@@ -10,17 +10,24 @@ import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import { MusicdetailComponent } from './pages/musicdetail/musicdetail.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 const MY_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'favorites', component: FavoritesComponent },
+  { path: 'musicdetail', component: MusicdetailComponent },
   { path: '**', redirectTo: 'home' }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    MusicdetailComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,11 @@ const MY_ROUTES: Routes = [
     MatIconModule,
     HttpClientModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatGridListModule,
+    MatBadgeModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
