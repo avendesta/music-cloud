@@ -29,7 +29,7 @@ export class FavoritesComponent implements OnInit {
     
     this.service.getAll('622f6967476b268f715f1c5e').subscribe((res:any)=> {
       let index = 0
-      res.forEach((element:any) => {
+      res['data'].forEach((element:any) => {
         ELEMENT_DATA.push({
           date: element['createdAt'],
           music: element['music']['title'],
