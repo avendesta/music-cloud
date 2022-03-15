@@ -18,6 +18,8 @@ import { UtilsService } from 'src/app/services/util/utils.service';
 export class LoginComponent implements OnDestroy{
   res$!: Subscription
   myForm: FormGroup;
+  cssValidator!: String
+  textValidator!: String
   constructor(private router: Router, private service: LoginService, private formBuilder: FormBuilder, private utilService: UtilsService) {
     this.myForm = formBuilder.group({
       'email': ['', Validators.compose([Validators.required, Validators.email])],
@@ -31,14 +33,34 @@ export class LoginComponent implements OnDestroy{
   }
 
   onSubmit() {
-    console.log(this.myForm.value);
-    this.res$ = this.service.login(this.myForm.value['email'],this.myForm.value['password']).subscribe((res:any)=>{
-      if(res['status']){
-        console.log("1")
-        this.utilService.setSession(res.token)
-        console.log("2")
-        this.router.navigate(['/home']);
-      }
+    // console.log(this.myForm.value);
+    // this.res$ = this.service.login(this.myForm.value['email'],this.myForm.value['password']).subscribe((res:any)=>{
+    //   if(res['status']){
+    //     this.utilService.setSession(res.token)
+    //     this.router.navigate(['/home']);
+    //   }
+    // })
+    this.service.login(this.myForm.value['email'],this.myForm.value['password']).subscribe({
+      next: (res: any) => {
+        if (!res['status'] ) {
+          this.cssValidator = 'danger'
+          this.textValidator = res['message']
+        } else {
+          this.cssValidator = 'success'
+          this.textValidator = 'Hello my dear!'
+          console.log('token:', res['token'])
+
+          //save token in session storage
+          this.utilService.setSession(res['token'])
+          this.router.navigate(['/home']);
+        }
+      },
+      error: (err: any) => {
+        this.cssValidator = 'danger'
+        this.textValidator = err.error.data
+        console.log(err.error.data)
+      },
+      complete: () => { }
     })
   }
 }
