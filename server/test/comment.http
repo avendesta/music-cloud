@@ -8,5 +8,5 @@ GET http://localhost:3000/comments/music/12312423
 POST http://localhost:3000/comments
 Content-Type: application/json
 
-{ "author":"622f6967476b268f715f1c5e", "underMusic": "622f6a75b59e5486dee9d39a", "content": "good music"}
+{ "author":"622f6967476b268f715f1c5e", "music": "622f6a75b59e5486dee9d39a", "content": "good music"}
 
