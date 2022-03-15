@@ -30,9 +30,9 @@ app.use(morgan('dev'));
 app.use("public", express.static(path.join(__dirname, 'assets')));
 
 // routes
-app.use("/favorite", requireAuth, favoriteRouter)
+app.use("/favorite", favoriteRouter)
 app.use("/users", userRouter)
-app.use("/comments", requireAuth, commentRouter)
+app.use("/comments", commentRouter)
 app.use("/music", musicRouter)
 
 
