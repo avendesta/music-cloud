@@ -13,7 +13,7 @@ exports.getByUserId = async function(userId){
 }
 
 // retrieve a music by id
-exports.getByMusicId = async function(musicId){
+exports.getById = async function(musicId){
     const result = await Music.findOne({_id: musicId})
     return result;
 }

@@ -4,6 +4,7 @@ const path = require('path')
 const cors = require('cors')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
+const { requireAuth } = require('./middleware/protect')
 
 require('dotenv').config();
 const port = process.env.PORT || 3000;
