@@ -4,6 +4,7 @@ const path = require('path')
 const cors = require('cors')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
+const { requireAuth } = require('./middleware/protect')
 
 require('dotenv').config();
 const port = process.env.PORT || 3000;
@@ -29,9 +30,9 @@ app.use(morgan('dev'));
 app.use("public", express.static(path.join(__dirname, 'assets')));
 
 // routes
-app.use("/favorite", favoriteRouter)
+app.use("/favorite", requireAuth, favoriteRouter)
 app.use("/users", userRouter)
-app.use("/comments", commentRouter)
+app.use("/comments", requireAuth, commentRouter)
 app.use("/music", musicRouter)
 
 
