@@ -10,17 +10,20 @@ import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import { HomeComponent } from './pages/home/home.component';
 
 const MY_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'favorites', component: FavoritesComponent },
+  { path: 'home', component: HomeComponent},
   { path: '**', redirectTo: 'home' }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
