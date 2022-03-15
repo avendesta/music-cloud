@@ -1,10 +1,26 @@
-<h1>All Musics</h1>
+<section class="content">
+  <h1>All Musics</h1>
+  <mat-grid-list cols="2" rowHeight="2:1" >
+    <mat-grid-tile *ngFor="let music of allMusic"
+    [colspan]="1"
+      [rowspan]="1">
+      <div>
+        <p>{{music.title}} By <span style="color: red;">{{music.artist}}</span> </p>
+        <a [routerLink]="music._id">
+          <img [src]="music.thumbnail" [alt]="music.description" [routerLink]="music._id">
+        </a>
+    </div>
+    </mat-grid-tile>
+    
+  </mat-grid-list>
+  <div style="margin: 20px;" *ngFor="let music of allMusic">
+    <!-- <div>
+        <p>{{music.title}} By <span style="color: red;">{{music.artist}}</span> </p>
+        <a [routerLink]="music._id">
+          <img [src]="music.thumbnail" [alt]="music.description" [routerLink]="music._id">
+        </a>
+    </div> -->
 
-<div style="margin: 20px;" *ngFor="let music of allMusic">
-  <div>
-      <p>{{music.title}} By <span style="color: red;">{{music.artist}}</span> </p>
-      <a [routerLink]="music._id">
-        <img [src]="music.thumbnail" [alt]="music.description" [routerLink]="music._id">
-      </a>
+    
   </div>
-</div>
+</section>
