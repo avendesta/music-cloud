@@ -13,12 +13,18 @@ import {MatMenuModule} from '@angular/material/menu';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MusicdetailComponent } from './pages/musicdetail/musicdetail.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 const MY_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'favorites', component: FavoritesComponent },
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'musicdetail', component: MusicdetailComponent },
   { path: '**', redirectTo: 'home' }
 ]
 
@@ -28,6 +34,7 @@ const MY_ROUTES: Routes = [
     FavoritesComponent,
     HomeComponent,
     LoginComponent,
+    MusicdetailComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +47,10 @@ const MY_ROUTES: Routes = [
     MatMenuModule,
     FormsModule,
     ReactiveFormsModule,
+    MatGridListModule,
+    MatBadgeModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

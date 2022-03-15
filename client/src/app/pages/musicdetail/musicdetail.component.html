@@ -1,0 +1,36 @@
+<section class="content music-detail">
+    <div>
+        <img [src]="IMG_URL">
+    </div>
+    <div class="description-music">
+        <p>
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                <span class="material-icons">
+                    play_circle_filled
+                </span>
+            </button>
+            {{title}}
+            <button mat-raised-button color="primary" matBadge="{{favorites}}" (click)="likeMusic()" matBadgePosition="before" matBadgeColor="accent">
+                <span class="material-icons">
+                    favorite
+                </span>
+            </button>
+        </p>
+    </div>
+
+    <mat-card>
+        <mat-card-title>music Details</mat-card-title>
+        <mat-card-subtitle>
+            <span class="">{{description}}</span>
+        </mat-card-subtitle>
+        <mat-card-actions align="end" class="button-likes">
+            <button mat-icon-button aria-label="like" class="mr-4">
+                <mat-icon color="accent">thumb_up</mat-icon> {{likes}}
+            </button>
+            <button mat-icon-button aria-label="dislike">
+                <mat-icon color="warn">thumb_down</mat-icon> {{dislikes}}
+            </button>
+        </mat-card-actions>
+       
+    </mat-card>
+</section>
