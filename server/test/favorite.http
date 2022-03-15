@@ -5,13 +5,13 @@ GET http://localhost:3000/favorite
 POST http://localhost:3000/favorite
 Content-Type: application/json
 
-{"userId": "622f6967476b268f715f1c5d", "musicId": "622f6ae1b59e5486dee9d39f"}
+{"user": "622f6967476b268f715f1c5d", "music": "622f6ae1b59e5486dee9d39f"}
 
-### test 03 -> remove favorite
-DELETE http://localhost:3000/favorite/622e4e2b79e6b372365b9eb8
+### test 03 -> remove a favorite
+DELETE http://localhost:3000/favorite/622f85d2a2b47f9d8e059af7
 
-### test 04 -> get favorite from user
+### test 04 -> get favorite by user
 GET http://localhost:3000/favorite/user/622f6967476b268f715f1c5e
 
-### test 05 -> get favorite from music
-GET http://localhost:3000/favorite/music/2
+### test 05 -> get favorite by music
+GET http://localhost:3000/favorite/music/622f6ac8b59e5486dee9d39d
