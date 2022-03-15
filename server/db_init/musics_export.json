@@ -8,6 +8,8 @@
   "artist": "Micheal Jackson",
   "title": "Thriller",
   "description": "1998 release",
+  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "thumbnail": "https://bit.ly/37xA8In",
   "createdAt": {
     "$date": "2022-03-14T16:16:53.013Z"
   },
@@ -25,6 +27,8 @@
   "artist": "Mariah Carey",
   "title": "All I want for Christmas",
   "description": "1994 release",
+  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "thumbnail": "https://bit.ly/37xA8In",
   "createdAt": {
     "$date": "2022-03-14T16:18:16.658Z"
   },
@@ -42,6 +46,8 @@
   "artist": "Michael Bolton",
   "title": "Steal Bars",
   "description": "1990 release",
+  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "thumbnail": "https://bit.ly/37xA8In",
   "createdAt": {
     "$date": "2022-03-14T16:18:41.732Z"
   },

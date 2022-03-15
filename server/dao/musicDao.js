@@ -6,15 +6,15 @@ exports.getAll = async function(){
     return result;
 }
 
-// retrieve a music by Userid
+// retrieve a music by user
 exports.getByUserId = async function(userId){
-    const result = await Music.find({userId: userId})
+    const result = await Music.find({uploader: userId})
     return result;
 }
 
-// retrieve a music by Musicid
+// retrieve a music by id
 exports.getByMusicId = async function(musicId){
-    const result = await Music.find({musicId: musicId})
+    const result = await Music.findOne({_id: musicId})
     return result;
 }
 

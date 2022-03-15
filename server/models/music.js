@@ -18,11 +18,12 @@ const musicSchema = mongoose.Schema({
     },
     filePath : {
         type: String,
-        default: "https://bit.ly/3IbJYMw"
+        default: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     catogory: String,
     thumbnail: {
-        type: String
+        type: String,
+        default: "https://bit.ly/3IbJYMw"
     }
 }, { timestamps: true })
 
