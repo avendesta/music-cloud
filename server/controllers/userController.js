@@ -42,13 +42,13 @@ async function login(req, res){
 
   if (!validpass) return res.json({ status: false, message: 'Invalid Password' });
   //Create and assign a token
-  const token = await jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+  const token = jwt.sign({ _id: user._id, username: user.username }, process.env.TOKEN_SECRET);
   user.token = token;
   // user.save(function (err, user) {
   //     if (err) return res.status(400).send(err);
   //     //  res.send(null, user);
   // })
-  return res.json({ status: true, token: token, userId: user._id, username: user.username });
+  return res.json({ status: true, token: token});
 }
 
 
