@@ -23,6 +23,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommentsComponent } from './components/comments/comments.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
+import { RegisterComponent } from './pages/register/register.component';
 
 const MY_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -30,6 +31,7 @@ const MY_ROUTES: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'musicdetail/:musicId', component: MusicdetailComponent },
+  { path: 'register', component: RegisterComponent},
   { path: '**', redirectTo: 'home' }
 ]
 
@@ -40,7 +42,8 @@ const MY_ROUTES: Routes = [
     HomeComponent,
     LoginComponent,
     MusicdetailComponent,
-    CommentsComponent
+    CommentsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
