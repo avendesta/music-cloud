@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FavoriteService } from 'src/app/services/favorites/favorite.service';
 import { MusicdetailService } from 'src/app/services/musicdetail/musicdetail.service';
+import { UtilsService } from 'src/app/services/util/utils.service';
 
 @Component({
   selector: 'app-musicdetails',
@@ -8,23 +10,36 @@ import { MusicdetailService } from 'src/app/services/musicdetail/musicdetail.ser
   styleUrls: ['./musicdetail.component.css']
 })
 export class MusicdetailComponent implements OnInit {
-
-  IMG_URL!: String
+  musicId!: string
+  img_music!: string
+  link!: string
   title!: string
   favorites!: number
   description!: string
   likes!: number
   dislikes!: number
 
-  constructor(private service: MusicdetailService, private serviceFav: FavoriteService) {
-    this.IMG_URL = 'http://image.tmdb.org/t/p/w1280/5P8SmMzSNYikXpxil6BYzJ16611.jpg'
+  constructor(private service: MusicdetailService, private serviceFav: FavoriteService, private route: ActivatedRoute, private serviceUtil: UtilsService) {
    }
 
   ngOnInit(): void {
-    this.service.getByMusicId('622f6a75b59e5486dee9d39a').subscribe((res:any)=> {
+    this.route.params.subscribe((res:any)=>{
+      this.musicId = res.musicId
+      this.getMusicDetail(this.musicId)
+    })
+  }
+
+  getMusicDetail(musicId: string) {
+    this.serviceFav.getByTotalMusicId(musicId).subscribe((res:any)=>{
+      console.log(res)
+      this.favorites = res
+    })
+
+    this.service.getByMusicId(musicId).subscribe((res:any)=> {
       console.log("music detail::::",res.data)
       this.title = res.data.title
-      this.favorites = 0
+      this.link = res.data.filePath
+      this.img_music = res.data.thumbnail
       this.description = res.data.description
       this.likes = 0
       this.dislikes = 0
@@ -32,9 +47,10 @@ export class MusicdetailComponent implements OnInit {
   }
 
   likeMusic() {
-    this.serviceFav.addFavorite("622f6967476b268f715f1c5d", "622f6ac8b59e5486dee9d39d").subscribe((res:any)=> {
+    console.log("userId", this.serviceUtil.getUserId())
+    console.log("musicId", this.musicId)
+    this.serviceFav.addFavorite(this.serviceUtil.getUserId(), this.musicId).subscribe((res:any)=> {
       console.log("like music ::::",res)
-      
     })
   }
 

@@ -34,10 +34,20 @@ function deleteOne(req, res) {
   return res.status(200).json({ status: true });
 }
 
+
+// get total favorites
+async function getTotalFavorites(req, res) {
+  const id = req.params.id;
+  console.log("total favorites by music:",id)
+  const result = await dao.getTotalFavoritesByMusic(id);
+  return res.status(200).json(result);
+}
+
 module.exports = {
   getAll,
   getByUser,
   addOne,
   getByMusic,
-  deleteOne
+  deleteOne,
+  getTotalFavorites
 };

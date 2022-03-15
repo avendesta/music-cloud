@@ -23,6 +23,7 @@ exports.getByMusicId = async function(musicId){
 
 // add a favorite
 exports.addOne = async function(body){
+    console.log("body fav:",body)
     const favorite = new Favorite(body)
     const result = await favorite.save()
     // console.log("addOne:",result)
@@ -35,4 +36,10 @@ exports.removeOne = async function(id){
     // console.log("delete Favorite:", id)
     await Favorite.deleteOne({_id: id})
     return true
+}
+
+// delete a favorite by id
+exports.getTotalFavoritesByMusic = async function(musicId){
+    const result = await Favorite.count({music: musicId})
+    return result
 }

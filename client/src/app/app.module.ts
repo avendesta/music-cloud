@@ -29,7 +29,7 @@ const MY_ROUTES: Routes = [
   { path: 'favorites', component: FavoritesComponent },
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'musicdetail', component: MusicdetailComponent },
+  { path: 'musicdetail/:musicId', component: MusicdetailComponent },
   { path: '**', redirectTo: 'home' }
 ]
 

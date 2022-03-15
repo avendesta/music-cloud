@@ -19,4 +19,11 @@ export class UtilsService {
   removeSession() {
     sessionStorage.removeItem('token')
   }
+
+  getUserId(){
+    const token = this.getSession() || ""
+    const decodedToken:any = JSON.parse(atob(token.split('.')[1]))
+    const userId = decodedToken["_id"]
+    return userId
+  }
 }

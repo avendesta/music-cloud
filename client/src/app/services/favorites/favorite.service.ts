@@ -21,8 +21,13 @@ export class FavoriteService {
   //add favorite
   addFavorite(userId: string, musicId: string) {
     let body = {
-      user: userId, musicId: musicId
+      user: userId, music: musicId
     }
     return this.client.post('http://localhost:3000/favorite', body)
+  }
+
+  //get all favorites from user
+  getByTotalMusicId(musicId: string) {
+    return this.client.get('http://localhost:3000/favorite/music/'+musicId+'/total/')
   }
 }
