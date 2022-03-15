@@ -7,6 +7,7 @@ import {
 import { Router } from '@angular/router';
 import { Observable, of, Subscription } from "rxjs";
 import { LoginService } from 'src/app/services/login/login.service';
+import { UtilsService } from 'src/app/services/util/utils.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ import { LoginService } from 'src/app/services/login/login.service';
 export class LoginComponent implements OnDestroy{
   res$!: Subscription
   myForm: FormGroup;
-  constructor(private router: Router, private service: LoginService, private formBuilder: FormBuilder) {
+  constructor(private router: Router, private service: LoginService, private formBuilder: FormBuilder, private utilService: UtilsService) {
     this.myForm = formBuilder.group({
       'email': ['', Validators.compose([Validators.required, Validators.email])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(8)])],
@@ -25,21 +26,19 @@ export class LoginComponent implements OnDestroy{
 
   }
   ngOnDestroy(): void {
-    this.res$.unsubscribe()
+    if(this.res$ != null)
+      this.res$.unsubscribe()
   }
 
   onSubmit() {
     console.log(this.myForm.value);
     this.res$ = this.service.login(this.myForm.value['email'],this.myForm.value['password']).subscribe((res:any)=>{
       if(res['status']){
-        this.saveToken(res.token)
+        console.log("1")
+        this.utilService.setSession(res.token)
+        console.log("2")
         this.router.navigate(['/home']);
       }
     })
-  }
-
-  saveToken(token: string) {
-    //save token in session storage
-    sessionStorage.setItem('token', token)
   }
 }
