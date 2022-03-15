@@ -40,7 +40,7 @@ export class RegisterComponent implements OnDestroy {
           this.textValidator = res['message']
         } else {
           this.cssValidator = 'success'
-          this.textValidator = 'Hello my dear!'
+          this.textValidator = ''
           console.log('token:', res['token'])
 
           //save token in session storage
