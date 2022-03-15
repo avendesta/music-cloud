@@ -1,0 +1,11 @@
+<mat-card>
+    <form [formGroup]="myForm" (ngSubmit)="sendComment()">
+        <mat-card-title>What do you think?</mat-card-title>
+        <mat-card-subtitle>
+            <textarea formControlName="comment" class="full" matInput></textarea>
+        </mat-card-subtitle>
+        <mat-card-actions align="end">
+            <button mat-flat-button color="primary" [disabled]="!myForm.valid" type="submit">Primary</button>
+        </mat-card-actions>
+    </form>
+</mat-card>
