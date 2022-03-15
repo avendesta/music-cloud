@@ -8,4 +8,16 @@
             <button mat-flat-button color="primary" [disabled]="!myForm.valid" type="submit">Primary</button>
         </mat-card-actions>
     </form>
+
+    <mat-list>
+        <mat-divider></mat-divider>
+        <div mat-subheader>Previous comments</div>
+        <mat-list-item *ngFor="let comments of myComments">
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <div mat-line>
+                <h5>{{comments.user}} <span>at {{comments.date | date}}</span></h5>
+            </div>
+            <div mat-line> {{comments.comment}} </div>
+        </mat-list-item>
+    </mat-list>
 </mat-card>

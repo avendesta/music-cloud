@@ -22,6 +22,7 @@ import { AppInterceptor } from './interceptor/app.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommentsComponent } from './components/comments/comments.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatListModule} from '@angular/material/list';
 
 const MY_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -57,7 +58,8 @@ const MY_ROUTES: Routes = [
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true }
