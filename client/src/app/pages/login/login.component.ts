@@ -17,7 +17,7 @@ import { Localcookie } from 'src/app/utils/localcookie';
 export class LoginComponent {
   elegantForm: FormGroup;
 
-  registrationForm: FormGroup;
+  registrationForm!: FormGroup;
   isSubmitted = false;
   action = true;
   setAutoHide = true;
@@ -31,7 +31,7 @@ export class LoginComponent {
       elegantFormPasswordEx: ['', Validators.required],
     });
   }
-  login() {
+  login() { 
     this.service.loginUser(this.elegantForm.value).subscribe(
       res => {
         if (res.status === true) {
@@ -48,16 +48,17 @@ export class LoginComponent {
         this.open('Something Error Occured');
       }
     );
+    
   }
 
-  open(message) {
+  open(message: any) {
     const config = new MatSnackBarConfig();
     config.verticalPosition = this.verticalPosition;
     config.horizontalPosition = this.horizontalPosition;
     config.duration = this.setAutoHide ? this.autoHide : 0;
     this.snackBar.open(
       message,
-      null,
+      null!,
       config
     );
   }
