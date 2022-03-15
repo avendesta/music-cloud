@@ -1,0 +1,9 @@
+<h1>All Musics</h1>
+
+<div style="margin: 20px;" *ngFor="let music of allMusic">
+  <div>
+      <p>{{music.title}} By <span style="color: red;">{{music.artist}}</span> </p>
+      <img [src]="music.thumbnail" [alt]="music.description">
+
+  </div>
+</div>
