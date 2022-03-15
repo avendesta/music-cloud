@@ -3,7 +3,8 @@
 <div style="margin: 20px;" *ngFor="let music of allMusic">
   <div>
       <p>{{music.title}} By <span style="color: red;">{{music.artist}}</span> </p>
-      <img [src]="music.thumbnail" [alt]="music.description">
-
+      <a [routerLink]="music._id">
+        <img [src]="music.thumbnail" [alt]="music.description" [routerLink]="music._id">
+      </a>
   </div>
 </div>

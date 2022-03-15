@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HomeService } from 'src/app/services/home/home.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { HomeService } from 'src/app/services/home/home.service';
 })
 export class HomeComponent implements OnInit {
   allMusic: { _id: string, title: string, artist: string, description: string, thumbnail: string }[] = [];
-  constructor(private service: HomeService) { }
+  constructor(private service: HomeService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.getAll().subscribe((res:any)=>{
