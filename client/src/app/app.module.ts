@@ -20,6 +20,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { AppInterceptor } from './interceptor/app.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CommentsComponent } from './components/comments/comments.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 const MY_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -36,7 +38,8 @@ const MY_ROUTES: Routes = [
     FavoritesComponent,
     HomeComponent,
     LoginComponent,
-    MusicdetailComponent
+    MusicdetailComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,9 @@ const MY_ROUTES: Routes = [
     MatGridListModule,
     MatBadgeModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true }
