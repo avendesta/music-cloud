@@ -100,6 +100,26 @@
 },
 {
   "_id": {
+    "$oid": "622f6a75b59e5486dee9d300"
+  },
+  "uploader": {
+    "$oid": "622f6967476b268f715f1c81"
+  },
+  "artist": "Sweet lady",
+  "title": "Horney music",
+  "description": "1999 release",
+  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "thumbnail": "https://cdn.pixabay.com/photo/2016/11/23/00/58/record-player-1851576__480.jpg",
+  "createdAt": {
+    "$date": "2022-03-14T16:16:53.013Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-14T16:16:53.013Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
     "$oid": "622f6ae1b59e5486dee9d39f"
   },
   "uploader": {

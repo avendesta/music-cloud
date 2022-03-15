@@ -1,13 +1,13 @@
 <section class="content">
   <h1>All Musics</h1>
-  <mat-grid-list cols="2" rowHeight="2:1" >
+  <mat-grid-list cols="2" rowHeight="2:1.5" >
     <mat-grid-tile *ngFor="let music of allMusic"
     [colspan]="1"
       [rowspan]="1">x
-      <div>
-        <p>{{music.title}} By <span style="color: red;">{{music.artist}}</span> </p>
+      <div class="description">       
         <a [routerLink]="music._id">
           <img [src]="music.thumbnail" [alt]="music.description" [routerLink]="music._id">
+          <div class="text">{{music.title}} <span>By {{music.artist}}</span> </div>
         </a>
     </div>
     </mat-grid-tile>

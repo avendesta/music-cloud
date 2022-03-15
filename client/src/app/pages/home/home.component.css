@@ -1,5 +1,23 @@
 .content{
     max-width: 960px;
     min-width: 960px;
+}
+.description img{
+    width: 100%;
 
+}
+.description a {
+    text-decoration: none;
+}
+.description a:hover{
+    text-decoration: underline;
+}
+.text{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+.text span{
+    color: gray;
 }
