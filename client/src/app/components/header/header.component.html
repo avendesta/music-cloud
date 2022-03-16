@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <a class="link-home" [routerLink]="['home']">
+            <span class="material-icons">
+                rocket_launch
+            </span>
+            <span>Music-cloud</span>
+        </a>
+        <span class="example-spacer"></span>
+        <div class="menu">
+            <button mat-button [matMenuTriggerFor]="menu">
+                My profile
+                <span class="material-icons">
+                    account_circle
+                </span>
+            </button>
+            <mat-menu #menu="matMenu">
+                <div *ngIf="token != ''" class="user-logged">
+                    <button mat-menu-item [routerLink]="['', 'favorites']">My favorites</button>
+                    <button mat-menu-item (click)="logout()">Logout</button>
+                </div>
+                <div class="user-guest" *ngIf="token == ''">
+                    <button mat-menu-item [routerLink]="['', 'login']">Login</button>
+                    <button mat-menu-item [routerLink]="['', 'register']">Register</button>
+                </div>
+            </mat-menu>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

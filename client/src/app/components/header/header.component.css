@@ -1,0 +1,21 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.menu button{
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.menu button span {
+    vertical-align: middle;
+    display: inline;
+}
+.link-home {
+    color: white;
+    text-decoration: none;
+}
+.link-home span {
+    display: inline;
+    vertical-align: middle;
+}

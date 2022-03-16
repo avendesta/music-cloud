@@ -33,25 +33,17 @@ export class LoginComponent implements OnDestroy{
   }
 
   onSubmit() {
-    // console.log(this.myForm.value);
-    // this.res$ = this.service.login(this.myForm.value['email'],this.myForm.value['password']).subscribe((res:any)=>{
-    //   if(res['status']){
-    //     this.utilService.setSession(res.token)
-    //     this.router.navigate(['/home']);
-    //   }
-    // })
     this.service.login(this.myForm.value['email'],this.myForm.value['password']).subscribe({
       next: (res: any) => {
         if (!res['status'] ) {
           this.cssValidator = 'danger'
           this.textValidator = res['message']
         } else {
-          this.cssValidator = 'success'
-          this.textValidator = 'Hello my dear!'
           console.log('token:', res['token'])
 
           //save token in session storage
           this.utilService.setSession(res['token'])
+          this.service.isLogged.emit(res['token'])
           this.router.navigate(['/home']);
         }
       },

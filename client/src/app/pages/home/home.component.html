@@ -3,9 +3,9 @@
   <mat-grid-list cols="2" rowHeight="2:1.5" >
     <mat-grid-tile *ngFor="let music of allMusic"
     [colspan]="1"
-      [rowspan]="1">x
+      [rowspan]="1">
       <div class="description">       
-        <a [routerLink]="music._id">
+        <a [routerLink]="['','musicdetail',music._id]">
           <img [src]="music.thumbnail" [alt]="music.description" [routerLink]="music._id">
           <div class="text">{{music.title}} <span>By {{music.artist}}</span> </div>
         </a>
@@ -13,14 +13,4 @@
     </mat-grid-tile>
     
   </mat-grid-list>
-  <div style="margin: 20px;" *ngFor="let music of allMusic">
-    <!-- <div>
-        <p>{{music.title}} By <span style="color: red;">{{music.artist}}</span> </p>
-        <a [routerLink]="music._id">
-          <img [src]="music.thumbnail" [alt]="music.description" [routerLink]="music._id">
-        </a>
-    </div> -->
-
-    
-  </div>
 </section>
