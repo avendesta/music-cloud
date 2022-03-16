@@ -32,10 +32,8 @@ export class MusicdetailComponent implements OnInit {
   }
 
   getMusicDetail(musicId: string) {
-    this.serviceFav.getByTotalMusicId(musicId).subscribe((res: any) => {
-      console.log(res)
-      this.favorites = res
-    })
+
+    this.getTotalFavorites(musicId)
 
     this.service.getByMusicId(musicId).subscribe((res: any) => {
       console.log("music detail::::", res.data)
@@ -48,12 +46,20 @@ export class MusicdetailComponent implements OnInit {
     })
   }
 
+  getTotalFavorites(musicId: string){
+    this.serviceFav.getByTotalMusicId(musicId).subscribe((res: any) => {
+      console.log(res)
+      this.favorites = res
+    })
+  }
+
   likeMusic() {
     if (this.token != '') {
       console.log("userId", this.serviceUtil.getUserId())
       console.log("musicId", this.musicId)
       this.serviceFav.addFavorite(this.serviceUtil.getUserId(), this.musicId).subscribe((res: any) => {
         console.log("like music ::::", res)
+        this.getTotalFavorites(this.musicId)
       })
     }
   }
