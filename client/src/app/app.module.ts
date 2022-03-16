@@ -24,10 +24,11 @@ import { CommentsComponent } from './components/comments/comments.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import { HeaderComponent } from './components/header/header.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const MY_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'favorites', component: FavoritesComponent },
+  { path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard] },
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'musicdetail/:musicId', component: MusicdetailComponent },
