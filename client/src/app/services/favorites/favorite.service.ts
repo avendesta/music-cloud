@@ -26,8 +26,18 @@ export class FavoriteService {
     return this.client.post('http://localhost:3000/favorite', body)
   }
 
+  //remove favorite
+  removeFavorite(favoriteId: string) {
+    return this.client.delete('http://localhost:3000/favorite/'+favoriteId)
+  }
+
   //get all favorites from user
   getByTotalMusicId(musicId: string) {
     return this.client.get('http://localhost:3000/favorite/music/'+musicId+'/total/')
+  }
+
+  //get all favorites from user
+  getFavoriteByMusicUser(musicId: string, userId: string) {
+    return this.client.get('http://localhost:3000/favorite/music/'+musicId+'/user/'+userId)
   }
 }

@@ -25,6 +25,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthGuard } from './guards/auth.guard';
+import { FavoriteDirective } from './components/favorite/favorite.directive';
 
 const MY_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -43,7 +44,8 @@ const MY_ROUTES: Routes = [
     LoginComponent,
     MusicdetailComponent,
     CommentsComponent,
-    HeaderComponent
+    HeaderComponent,
+    FavoriteDirective
   ],
   imports: [
     BrowserModule,

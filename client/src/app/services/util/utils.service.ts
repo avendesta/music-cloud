@@ -20,10 +20,14 @@ export class UtilsService {
     sessionStorage.removeItem('token')
   }
 
-  getUserId(){
+  getUserId() {
     const token = this.getSession() || ""
-    const decodedToken:any = JSON.parse(atob(token.split('.')[1]))
-    const userId = decodedToken["_id"]
+    let userId = ''
+    try {
+      const decodedToken: any = JSON.parse(atob(token.split('.')[1]))
+      userId = decodedToken["_id"]
+    } catch (ex) {
+    }
     return userId
   }
 }
