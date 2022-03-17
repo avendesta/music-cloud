@@ -29,10 +29,10 @@ async function getByMusic(req, res) {
 }
 
 // add one
-function addOne(req, res) {
+async function addOne(req, res) {
   const favorite = req.body;    
-  dao.addOne(favorite);
-  return res.status(201).json({ status: true });
+  const result = await dao.addOne(favorite);
+  return res.status(201).json({ status: true, data: result });
 }
 
 // delete one

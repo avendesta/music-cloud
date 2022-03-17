@@ -19,9 +19,7 @@ exports.getByUserMusicId = async function(userId, musicId){
     console.log("userId: ",userId)
     console.log("musicId: ",musicId)
     const result = await Favorite.findOne({user:userId, music: musicId})
-    if(result != null)
-        return true;
-    return false
+    return result
 }
 
 // retrieve a favorite by Musicid
@@ -36,8 +34,9 @@ exports.addOne = async function(body){
     console.log("body fav:",body)
     const favorite = new Favorite(body)
     const result = await favorite.save()
+    console.log("add new favorite::", result)
     // console.log("addOne:",result)
-    return true
+    return result
 }
 
 // delete a favorite by id
