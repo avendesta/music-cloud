@@ -13,6 +13,14 @@ async function getByUser(req, res) {
   return res.status(200).json({status:true, data:result});
 }
 
+// get by id
+async function getByUserMusic(req, res) {
+  const userId = req.params.userId;
+  const musicId = req.params.musicId;
+  const result = await dao.getByUserMusicId(userId, musicId)
+  return res.status(200).json({status:true, data:result});
+}
+
 // get by music id
 async function getByMusic(req, res) {
   const musicId = req.params.musicId;
@@ -49,5 +57,6 @@ module.exports = {
   addOne,
   getByMusic,
   deleteOne,
-  getTotalFavorites
+  getTotalFavorites,
+  getByUserMusic
 };

@@ -14,6 +14,16 @@ exports.getByUserId = async function(userId){
     return result;
 }
 
+// retrieve a favorite by Userid
+exports.getByUserMusicId = async function(userId, musicId){
+    console.log("userId: ",userId)
+    console.log("musicId: ",musicId)
+    const result = await Favorite.findOne({user:userId, music: musicId})
+    if(result != null)
+        return true;
+    return false
+}
+
 // retrieve a favorite by Musicid
 exports.getByMusicId = async function(musicId){
     const result = await Favorite.find({music: musicId})

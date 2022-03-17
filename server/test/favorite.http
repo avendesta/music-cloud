@@ -18,3 +18,6 @@ GET http://localhost:3000/favorite/music/622f6ac8b59e5486dee9d39d
 
 ### test 06 -> get total favorites by music
 GET http://localhost:3000/favorite/music/622f6ac8b59e5486dee9d39d/total
+
+### test 07 -> get favorite by user and music
+GET http://localhost:3000/favorite/music/622f6a75b59e5486dee9d39b/user/622f6967476b268f715f1c5f
