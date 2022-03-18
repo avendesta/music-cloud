@@ -1,3 +1,4 @@
+import { RegisterComponent } from './pages/register/register.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
@@ -6,23 +7,23 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { RouterModule, Routes } from '@angular/router';
-import {MatTableModule} from '@angular/material/table';
-import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MusicdetailComponent } from './pages/musicdetail/musicdetail.component';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { AppInterceptor } from './interceptor/app.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommentsComponent } from './components/comments/comments.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatListModule} from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthGuard } from './guards/auth.guard';
 import { FavoriteDirective } from './components/favorite/favorite.directive';
@@ -30,8 +31,9 @@ import { FavoriteDirective } from './components/favorite/favorite.directive';
 const MY_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard] },
-  { path: 'home', component: HomeComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'musicdetail/:musicId', component: MusicdetailComponent },
   { path: '**', redirectTo: 'home' }
 ]
@@ -42,6 +44,7 @@ const MY_ROUTES: Routes = [
     FavoritesComponent,
     HomeComponent,
     LoginComponent,
+    RegisterComponent,
     MusicdetailComponent,
     CommentsComponent,
     HeaderComponent,
