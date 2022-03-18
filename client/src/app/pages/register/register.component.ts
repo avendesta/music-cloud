@@ -28,23 +28,22 @@ export class RegisterComponent implements OnDestroy {
 
   }
   ngOnDestroy(): void {
-    if(this.res$ != null)
+    if (this.res$ != null)
       this.res$.unsubscribe()
   }
 
   onSubmit() {
-    this.service.register(this.myForm.value['email'],this.myForm.value['password'], this.myForm.value['username']).subscribe({
+    this.service.register(this.myForm.value['email'], this.myForm.value['password'], this.myForm.value['username']).subscribe({
       next: (res: any) => {
-        if (!res['status'] ) {
+        if (!res['status']) {
           this.cssValidator = 'danger'
           this.textValidator = res['message']
         } else {
           this.cssValidator = 'success'
           this.textValidator = ''
-          console.log('token:', res['token'])
 
-          //save token in session storage
-          this.utilService.setSession(res['token'])
+          //save empty token
+          this.utilService.setSession('')
           this.router.navigate(['/home']);
         }
       },

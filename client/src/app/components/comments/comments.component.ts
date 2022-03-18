@@ -26,7 +26,7 @@ export class CommentsComponent implements OnInit, OnDestroy {
   subscriptionAllComments!: Subscription
 
   constructor(private serviceComment: CommentService, private fb: FormBuilder, private serviceUtil: UtilsService, private router: ActivatedRoute) {
-    this.router.params.subscribe((res:any)=>{
+    this.router.params.subscribe((res: any) => {
       this.musicId = res.musicId
     })
 
@@ -62,7 +62,7 @@ export class CommentsComponent implements OnInit, OnDestroy {
   sendComment() {
 
     let comment = this.myForm.get('comment')?.value
-    let userId =  this.serviceUtil.getUserId()
+    let userId = this.serviceUtil.getUserId()
     let musicId = this.musicId
 
     this.serviceComment.setComment(userId, musicId, comment).subscribe((res: any) => {

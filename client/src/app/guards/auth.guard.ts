@@ -12,17 +12,17 @@ export class AuthGuard implements CanActivate {
 
   constructor(private service: UtilsService, private router: Router, private loginService: LoginService) {
     this.token = this.service.getSession() || ''
-    this.loginService.isLogged.subscribe((res=>{
+    this.loginService.isLogged.subscribe((res => {
       this.token = res
     }))
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
-    return new Promise((resolve)=> {
-      if(this.token == '')
-      this.router.navigate(['/home']);
+    return new Promise((resolve) => {
+      if (this.token == '')
+        this.router.navigate(['/home']);
       else resolve(true)
     })
   }
-  
+
 }
