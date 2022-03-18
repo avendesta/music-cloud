@@ -28,7 +28,7 @@
   "artist": "Hand Gitar dji",
   "title": "Rock",
   "description": "2006 release",
-  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "filePath": "https://www.youtube.com/watch?v=_kxz7WX4mLU",
   "thumbnail": "https://cdn.pixabay.com/photo/2014/05/21/15/18/musician-349790__340.jpg",
   "createdAt": {
     "$date": "2022-03-14T16:16:53.013Z"
@@ -48,7 +48,7 @@
   "artist": "Micheal Jackson",
   "title": "Romance",
   "description": "2001 release",
-  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "filePath": "https://www.youtube.com/watch?v=YqJ09Flxt1M",
   "thumbnail": "https://bit.ly/37xA8In",
   "createdAt": {
     "$date": "2022-03-14T16:16:53.013Z"
@@ -108,7 +108,7 @@
   "artist": "Sweet lady",
   "title": "Horney music",
   "description": "1999 release",
-  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "filePath": "https://www.youtube.com/watch?v=ZMUUO6rx0Vk",
   "thumbnail": "https://cdn.pixabay.com/photo/2016/11/23/00/58/record-player-1851576__480.jpg",
   "createdAt": {
     "$date": "2022-03-14T16:16:53.013Z"
@@ -128,7 +128,7 @@
   "artist": "Michael Bolton",
   "title": "Steal Bars",
   "description": "2021 release",
-  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "filePath": "https://www.youtube.com/watch?v=ssj-Ddieekw",
   "thumbnail": "https://bit.ly/37xA8In",
   "createdAt": {
     "$date": "2022-03-14T16:18:41.732Z"
@@ -149,8 +149,8 @@
   "artist": "Baby girl",
   "title": "Vaioline",
   "description": "2005 release",
-  "filePath": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  "thumbnail": "https://cdn.pixabay.com/photo/2016/08/24/20/39/violin-1617972__480.jpg",
+  "filePath": "https://www.youtube.com/watch?v=W7xR3MlijkQ",
+  "thumbnail": "https://cdn.pixabay.com/photo/2016/11/22/19/15/hand-1850120__340.jpg",
   "createdAt": {
     "$date": "2022-03-14T16:18:41.732Z"
   },

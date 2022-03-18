@@ -6,7 +6,7 @@
   "email": "okabit@gmail.com",
   "firstname": "Okbakrstos",
   "lastname": "Berhe",
-  "password": "$2a$04$ffiwq15HqBrhvSpMdo2qj.JtN9dt/1raTftitR0RYOt9l/Mq2WvtS"
+  "password": "$2a$12$DBg9dVnqG/zGibfvocP6xe5pFLb0URrYBvD8fnSMqo9dMSGjkylkm"
 },{
   "_id": {
     "$oid": "622f6967476b268f715f1c5e"
@@ -15,7 +15,7 @@
   "email": "aven@gmail.com",
   "firstname": "Aven",
   "lastname": "Desta",
-  "password": "$2a$04$.0nHkTOqt13jaAniE02JCO7AxhVOdF/4c0ZshUaICoyGDKU973TiO"
+  "password": "$2a$12$SwS6DmwvbKcZyGtE6lQ2BeFC2ioIb3.iFX37ePe.OK.rNQUwNqyau"
 },{
   "_id": {
     "$oid": "622f6967476b268f715f1c5f"
@@ -24,5 +24,5 @@
   "email": "elias@gmail.com",
   "firstname": "Elias",
   "lastname": "Mamani",
-  "password": "$2a$04$ghc4BvW4NfdzNPE2WA13V.UjbiVONlUJ3wtsxGvWar5ZyIjm3AXEy"
+  "password": "$2a$12$rYyxgi/o9Pt.wQVctzW5XOe/pKzu8nR9zcU6botzpYNHklsso5V2C"
 }]
